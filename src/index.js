@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./components/React Hooks(Usestate with Obj)/App";
+import App from "./components/React Hooks(DataFetching by ID with UseEffect)/App";
 
 ReactDOM.render(
   <React.StrictMode>
