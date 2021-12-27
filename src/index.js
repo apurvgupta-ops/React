@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/React Hooks(UseCallback)/App";
+import "./App.css";
+import App from "./components/React Hooks(UseMemo)/App";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div className="App">
     <App />
-  </React.StrictMode>,
+  </div>,
   document.getElementById("root")
 );
 
