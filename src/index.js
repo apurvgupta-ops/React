@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-import App from "./components/React Hooks(UseRef)/App";
+import App from "./components/React Hooks(Custom Hook Que2)/App";
 
 ReactDOM.render(
   <div className="App">
