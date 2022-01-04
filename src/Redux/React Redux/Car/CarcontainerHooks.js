@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { buycar } from "./carActions";
 const CarcontainerHooks = () => {
-  const noofcars = useSelector((state) => state.noOfCars);
+  const noofcars = useSelector((state) => state.car.noOfCars);
   const dispatch = useDispatch();
 
   return (

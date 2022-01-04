@@ -13,7 +13,7 @@ const carContainer = (props) => {
 
 const mapStateToProp = (state) => {
   return {
-    noOfCars: state.noOfCars,
+    noOfCars: state.car.noOfCars,
   };
 };
 
