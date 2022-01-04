@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-import App from "./Redux/Store/Store";
+import App from "./Redux/React Redux/App";
 
 ReactDOM.render(
   <div className="App">

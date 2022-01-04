@@ -1,6 +1,11 @@
 const redux = require("redux");
+const middleware = require("redux-logger");
+
 const createStore = redux.createStore;
 const combineReducers = redux.combineReducers;
+const applyMiddleware = redux.applyMiddleware;
+const logger = middleware.createLogger();
+
 // Action
 const Car = "Car";
 const Bike = "Bike";
@@ -54,7 +59,7 @@ const root = combineReducers({
   bike: bikeReducers,
 });
 
-const store = createStore(root);
+const store = createStore(root, applyMiddleware(logger));
 console.log("initial state", store.getState());
 const unsubscribe = store.subscribe(() =>
   console.log("update State", store.getState())
