@@ -19,7 +19,7 @@ const mapStateToProp = (state) => {
 
 const mapDispatchToProp = (dispatch) => {
   return {
-    buybike: dispatch(buybike()),
+    buybike: () => dispatch(buybike()),
   };
 };
 

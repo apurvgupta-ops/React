@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
     case BUY_CAR:
       return {
         ...state,
-        noOfCars: state.noOfCars - 1,
+        noOfCars: state.noOfCars - action.payload,
       };
 
     default:
