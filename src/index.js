@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./App.css";
-import App from "./Redux/React Redux/App";
+import App from "./React Query/App";
 
 ReactDOM.render(
   <div className="App">

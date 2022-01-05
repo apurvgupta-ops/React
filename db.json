@@ -1,0 +1,19 @@
+{
+    "superhero":[
+        {
+            "id":1,
+            "name":"Superman",
+            "sname":"clerk kant"
+        },
+        {
+            "id":2,
+            "name":"Cris hamsworth",
+            "sname":"Thor"
+        },
+        {
+            "id":3,
+            "name":"Tony Stark",
+            "sname":"Iron man"
+        }
+    ]
+}
