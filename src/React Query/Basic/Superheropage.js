@@ -16,7 +16,12 @@ const Superheropage = () => {
         setError(error.message);
         setLoading(false);
       });
-  });
+  }, []);
+
+  // const eventHandler = (e) => {
+  //   e.preventDefault();
+  //   setData(data);
+  // };
 
   if (loading) {
     return <h3>Loading...</h3>;
@@ -28,6 +33,8 @@ const Superheropage = () => {
   return (
     <div>
       <h1>SuperHero List</h1>
+      {/* <button onClick={eventHandler}>Fetch heros</button> */}
+      {/* <h2>{data.name}</h2> */}
       {data.map((data) => {
         return <h2 key={data.name}>{data.name}</h2>;
       })}

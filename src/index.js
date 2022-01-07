@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./React Query/App";
 
 ReactDOM.render(
   <div className="App">
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </div>,
   document.getElementById("root")
 );
