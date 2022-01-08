@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSuperHeroById } from "./CustomHook/useSuperHeroById";
 
-const RQsuperhero = () => {
+const RQsuperherobyid = () => {
   const { heroId } = useParams();
   const { isError, error, isLoading, data } = useSuperHeroById(heroId);
   if (isLoading) {
@@ -20,4 +20,4 @@ const RQsuperhero = () => {
   );
 };
 
-export default RQsuperhero;
+export default RQsuperherobyid;

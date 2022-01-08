@@ -20,5 +20,64 @@
             "name":"Hulk",
             "sname":"Bruce Baner"
         }
+    ],
+    "friends" :[
+        {
+            "id":1,
+            "name":"John"
+        },
+        {
+            "id":2,
+            "name":"Rock"
+        },{
+            "id":1,
+            "name":"Brock"
+        }
+    ],
+    "user" :[
+        {
+            "id" : "a@example.com",
+            "channelId":"dontknow"
+        }
+    ],
+    "channels" :[
+        {
+            "id":"dontknow",
+            "courses" : ["react","vue","angular"]
+        }
+    ],
+    "colors":[
+        {
+            "id":1,
+            "label" : "grey"
+        },
+        {
+            "id":2,
+            "label" : "violet"
+        },
+        {
+            "id":3,
+            "label" : "brown"
+        },
+        {
+            "id":4,
+            "label" : "pink"
+        },
+        {
+            "id":5,
+            "label" : "yellow"
+        },
+        {
+            "id":6,
+            "label" : "red"
+        },
+        {
+            "id":7,
+            "label" : "white"
+        },
+        {
+            "id":8,
+            "label" : "black"
+        }
     ]
 }
