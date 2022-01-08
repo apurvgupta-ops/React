@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "react-query";
 import axios from "axios";
 
 const fetchHeros = () => {
@@ -21,5 +21,10 @@ export const useSuperHeros = (onSuccess, onError) => {
 };
 
 export const useAddSuperHero = () => {
-  return useMutation(addHero);
+  const queryClient = useQueryClient(); // this automatic update the data without click on fetch hero button
+  return useMutation(addHero, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("superheros");
+    },
+  });
 };
