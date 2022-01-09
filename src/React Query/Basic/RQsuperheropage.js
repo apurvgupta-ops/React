@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { useSuperHeros, useAddSuperHero } from "./CustomHook/useSuperHeros";
 import { useState } from "react";
+import { request } from "./axiosUtils";
+
 // const fetchHeros = () => {
 //   return axios.get("http://localhost:4000/superhero");
+//  return request({url :"/superhero"})  Axios Interceptor
 // };
 
 // One way to do fetching**
