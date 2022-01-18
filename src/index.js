@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "./React Query/App";
+import App from "./React Formik/App";
 
 ReactDOM.render(
   <div className="App">
