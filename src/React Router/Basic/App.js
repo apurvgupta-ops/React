@@ -8,6 +8,7 @@ import NoMatchRoute from "./NoMatchRoute";
 import { Products } from "./Products";
 import { Featured } from "./Featured";
 import { New } from "./New";
+import { Users } from "./Users";
 const App = () => {
   return (
     <div>
@@ -21,6 +22,8 @@ const App = () => {
           <Route path="featured" element={<Featured />} />
           <Route path="new" element={<New />} />
         </Route>
+        <Route path="users" element={<Users />} />
+        <Route path="users/:userId" element={<Users />} /> //Dyanmic Routes
       </Routes>
     </div>
   );
