@@ -8,13 +8,15 @@ import "../App.css";
 
 const App = () => {
   return (
-    <div className="App">
-      {/* <Form /> */}
-      {/* <Formikform /> */}
-      {/* <HandleSubmission /> */}
-      {/* <Validations /> */}
-      <NewFrom />
-    </div>
+    <>
+      <div className="App">
+        {/* <Form /> */}
+        {/* <Formikform /> */}
+        {/* <HandleSubmission /> */}
+        {/* <Validations /> */}
+        <NewFrom />
+      </div>
+    </>
   );
 };
 
