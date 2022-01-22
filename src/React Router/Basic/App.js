@@ -19,6 +19,7 @@ const App = () => {
         <Route path="order-summary" element={<OrderSummary />} />
         <Route path="*" element={<NoMatchRoute />} />
         <Route path="products" element={<Products />}>
+          <Route index element={<Featured />} /> // indexing
           <Route path="featured" element={<Featured />} />
           <Route path="new" element={<New />} />
         </Route>
