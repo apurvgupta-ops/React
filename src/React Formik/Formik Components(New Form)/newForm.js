@@ -14,6 +14,9 @@ const initialValues = {
     facebook: "",
     instagram: "",
   },
+
+  //Array
+  phoneNo: ["", ""],
 };
 const onSubmit = (values) => {
   console.log("Form data", values);
@@ -88,6 +91,16 @@ const Validations = () => {
         <div className="form-control">
           <label htmlFor="instagram">Instagram</label>
           <Field type="text" id="instagram" name="social.instagram" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="primaryNo">Primary phoneNo</label>
+          <Field type="text" id="primaryNo" name="phoneNo[0]" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="secondaryNo">Instagram</label>
+          <Field type="text" id="secondaryNo" name="phoneNo[1]" />
         </div>
 
         <button type="submit">Submit</button>
