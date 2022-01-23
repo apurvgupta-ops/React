@@ -1,4 +1,11 @@
-import { useFormik, Formik, Form, Field, ErrorMessage } from "formik";
+import {
+  useFormik,
+  Formik,
+  Form,
+  Field,
+  ErrorMessage,
+  FieldArray,
+} from "formik";
 import React from "react";
 import * as Yup from "yup";
 
@@ -17,6 +24,7 @@ const initialValues = {
 
   //Array
   phoneNo: ["", ""],
+  phNo: [""],
 };
 const onSubmit = (values) => {
   console.log("Form data", values);
@@ -99,8 +107,36 @@ const Validations = () => {
         </div>
 
         <div className="form-control">
-          <label htmlFor="secondaryNo">Instagram</label>
+          <label htmlFor="secondaryNo">Secondary phoneNo</label>
           <Field type="text" id="secondaryNo" name="phoneNo[1]" />
+        </div>
+
+        {/* Field Array */}
+        <div className="form-control">
+          <label>Ph no</label>
+          <FieldArray type="text" name="phNo">
+            {(props) => {
+              {
+                /* console.log("Field Props", props); */
+              }
+              const { form, push, remove } = props;
+              const { values } = form;
+              const { phNo } = values;
+              return (
+                <div>
+                  {phNo.map((number, index) => (
+                    <div key={index}>
+                      <Field type="text" name={`phNo[${index}]`} />
+                      {index > 0 && (
+                        <button onClick={() => remove(index)}>-</button>
+                      )}
+                      <button onClick={() => push(index)}>+</button>
+                    </div>
+                  ))}
+                </div>
+              );
+            }}
+          </FieldArray>
         </div>
 
         <button type="submit">Submit</button>
