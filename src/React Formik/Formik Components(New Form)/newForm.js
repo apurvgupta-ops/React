@@ -8,6 +8,7 @@ import {
 } from "formik";
 import React from "react";
 import * as Yup from "yup";
+import TextError from "../TextError";
 
 const initialValues = {
   name: "",
@@ -37,12 +38,23 @@ const validationSchema = Yup.object({
   channel: Yup.string().required("Required!"),
 });
 
+//Field Level Validation
+const validationComments = (values) => {
+  let error;
+  if (!values) {
+    error = "Required";
+  }
+  return error;
+};
+
 const Validations = () => {
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
+      // validateOnBlur={false}
+      // validateOnChange={false}
     >
       <Form>
         <h1>Simple Form</h1>
@@ -56,6 +68,8 @@ const Validations = () => {
         <div className="form-control">
           <label htmlFor="email">E-Mail</label>
           <Field type="email" id="email" name="email" />
+
+          {/* Inline error styling and message by render props method*/}
           <ErrorMessage name="email">
             {(error) => <div className="error">{error}</div>}
           </ErrorMessage>
@@ -69,7 +83,13 @@ const Validations = () => {
 
         <div>
           <label htmlFor="comments">Comments</label>
-          <Field as="textarea" id="comments" name="comments" />
+          <Field
+            as="textarea"
+            id="comments"
+            name="comments"
+            validate={validationComments}
+          />
+          <ErrorMessage name="comments" component={TextError} />
         </div>
 
         {/* //Render Props Method using with Formik */}
@@ -130,7 +150,7 @@ const Validations = () => {
                       {index > 0 && (
                         <button onClick={() => remove(index)}>-</button>
                       )}
-                      <button onClick={() => push(index)}>+</button>
+                      <button onClick={() => push("")}>+</button>
                     </div>
                   ))}
                 </div>
