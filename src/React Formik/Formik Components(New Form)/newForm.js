@@ -56,6 +56,14 @@ const Validations = () => {
       // validateOnBlur={false}
       // validateOnChange={false}
     >
+      {/*
+    we can do this also to access all the formik properties  
+      formik={
+        return(
+        Form
+        )
+      }
+     */}
       <Form>
         <h1>Simple Form</h1>
 
