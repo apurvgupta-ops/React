@@ -9,31 +9,46 @@ import { Products } from "./Products";
 import { Featured } from "./Featured";
 import { New } from "./New";
 import { Users } from "./Users";
+import Login from "./Login";
+import Profile from "./Profile";
+import { AuthProvider } from "./auth";
+import { ReqAuth } from "./ReqAuth";
 const LazyAbout = React.lazy(() => import("./Aboutpage"));
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route
-          path="aboutpage"
-          element={
-            <React.Suspense fallback="Loading...">
-              <LazyAbout />
-            </React.Suspense>
-          }
-        />
-        <Route path="order-summary" element={<OrderSummary />} />
-        <Route path="*" element={<NoMatchRoute />} />
-        <Route path="products" element={<Products />}>
-          <Route index element={<Featured />} /> // indexing
-          <Route path="featured" element={<Featured />} />
-          <Route path="new" element={<New />} />
-        </Route>
-        <Route path="users" element={<Users />} />
-        <Route path="users/:userId" element={<Users />} /> //Dyanmic Routes
-      </Routes>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route
+            path="aboutpage"
+            element={
+              <React.Suspense fallback="Loading...">
+                <LazyAbout />
+              </React.Suspense>
+            }
+          />
+          <Route path="order-summary" element={<OrderSummary />} />
+          <Route path="*" element={<NoMatchRoute />} />
+          <Route path="products" element={<Products />}>
+            <Route index element={<Featured />} /> // indexing
+            <Route path="featured" element={<Featured />} />
+            <Route path="new" element={<New />} />
+          </Route>
+          <Route path="users" element={<Users />} />
+          <Route
+            path="profile"
+            element={
+              <ReqAuth>
+                <Profile />
+              </ReqAuth>
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route path="users/:userId" element={<Users />} /> //Dyanmic Routes
+        </Routes>
+      </AuthProvider>
     </div>
   );
 };
