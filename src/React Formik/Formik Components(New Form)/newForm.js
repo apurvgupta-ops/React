@@ -5,6 +5,7 @@ import {
   Field,
   ErrorMessage,
   FieldArray,
+  FastField,
 } from "formik";
 import React from "react";
 import * as Yup from "yup";
@@ -103,7 +104,9 @@ const Validations = () => {
         {/* //Render Props Method using with Formik */}
         <div className="form-control">
           <label htmlFor="address">Address</label>
-          <Field type="text" id="address" name="address">
+
+          {/* Normal Field is dependent on other fields so it render whenever we use any field but Fastfield is a independent component which is only render when we use that perticular field*/}
+          <FastField type="text" id="address" name="address">
             {(props) => {
               const { field, form, meta } = props;
               {
@@ -116,7 +119,7 @@ const Validations = () => {
                 </div>
               );
             }}
-          </Field>
+          </FastField>
         </div>
 
         <div className="form-control">
