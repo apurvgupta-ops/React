@@ -1,4 +1,4 @@
-import { Button, Stack, IconButton } from "@mui/material";
+import { Button, Stack, IconButton, ButtonGroup } from "@mui/material";
 import { Send } from "@mui/icons-material";
 
 export const MuiButtons = () => {
@@ -47,6 +47,14 @@ export const MuiButtons = () => {
           <IconButton aria-label="send" color="info">
             <Send />
           </IconButton>
+        </Stack>
+
+        <Stack direction="row">
+          <ButtonGroup variant="contained" orientation="vertical">
+            <Button onClick={() => alert("leftCLicked")}>Left</Button>
+            <Button>Center</Button>
+            <Button>Right</Button>
+          </ButtonGroup>
         </Stack>
       </Stack>
     </div>
